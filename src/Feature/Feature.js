@@ -8,6 +8,19 @@ class Feature extends Component {
     // title
     // presence
     // subfeatures
+    this.state = {
+      showSubfeatures: false
+    };
+  }
+
+  onClick() {
+    if(this.state.showSubfeatures){
+
+    }
+    this.setState({
+      showSubfeatures: !this.state.showSubfeatures
+    });
+
   }
   render() {
     if(this.props.subfeatures.length > 0){
@@ -18,19 +31,22 @@ class Feature extends Component {
           <Feature key={index} title={feature.title} presence={feature.presence} subfeatures={feature.subfeatures} />
         )
       });
+
       return (
-        <li>
-          {this.props.title} - {this.props.presence ? 'Present' : 'Not Present'}
+        <li class="Feature">
+          <button type="button">{this.props.title} - {this.props.presence ? 'Present' : 'Not Present'}</button>
           <ul>
-            {subfeatureComponents}
+            { this.state.showSubfeatures ? subfeatureComponents : null}
           </ul>
         </li>
       )
     }
     else{
       return (
-        <li>
-          {this.props.title} - {this.props.presence ? 'Present' : 'Not Present'}
+        <li class="Feature">
+          <button type="button">
+            {this.props.title} - {this.props.presence ? 'Present' : 'Not Present'}
+          </button>
         </li>
       )
     }

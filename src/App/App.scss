@@ -1,3 +1,7 @@
+.App {
+  
+}
+
 .App-header {
   background-color: #222;
   height: 150px;
@@ -14,20 +18,16 @@
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
+
 
 .Feature-container {
   margin-left: 200px;
   margin-right: 200px;
-}
-
-.Feature-container ul {
-  font-size: 24px;
-  list-style-type: none;
+  ul{
+    font-size: 24px;
+    list-style-type: none;
+  }
 }
