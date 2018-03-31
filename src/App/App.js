@@ -8,9 +8,7 @@ class App extends Component {
 
     let featureComponents = featureList.map((feature, index) => {
       return (
-        <div>
-          <Feature key={index} title={feature.title} presence={feature.presence} subfeatures={feature.subfeatures} />
-        </div>
+        <Feature key={index} title={feature.title} presence={feature.presence} subfeatures={feature.subfeatures} />
       )
     });
 

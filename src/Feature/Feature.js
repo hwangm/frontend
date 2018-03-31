@@ -10,34 +10,28 @@ class Feature extends Component {
     // subfeatures
   }
   render() {
-    if(this.props.subfeatures){
+    if(this.props.subfeatures.length > 0){
       let subfeatures = this.props.subfeatures;
-
+      console.log(this.props.subfeatures);
       let subfeatureComponents = subfeatures.map((feature, index) => {
         return (
-          <div>
-            <Feature key={index} title={feature.title} presence={feature.presence} subfeatures={feature.subfeatures} />
-          </div>
+          <Feature key={index} title={feature.title} presence={feature.presence} subfeatures={feature.subfeatures} />
         )
       });
       return (
-        <div>
-          <li>
-            {this.props.title} - {this.props.presence ? 'Present' : 'Not Present'}
-            <ul>
-              {subfeatureComponents}
-            </ul>
-          </li>
-        </div>
+        <li>
+          {this.props.title} - {this.props.presence ? 'Present' : 'Not Present'}
+          <ul>
+            {subfeatureComponents}
+          </ul>
+        </li>
       )
     }
     else{
       return (
-        <div>
-          <li>
-            {this.props.title} - {this.props.presence ? 'Present' : 'Not Present'}
-          </li>
-        </div>
+        <li>
+          {this.props.title} - {this.props.presence ? 'Present' : 'Not Present'}
+        </li>
       )
     }
     
