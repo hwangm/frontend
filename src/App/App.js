@@ -4,15 +4,24 @@ import Feature from '../Feature/Feature';
 
 class App extends Component {
   render() {
+    let featureList = window.FEATURES;
+
+    let featureComponents = featureList.map((feature, index) => {
+      return (
+        <div>
+          <Feature key={index} title={feature.title} presence={feature.presence} subfeatures={feature.subfeatures} />
+        </div>
+      )
+    });
+
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Feature />
+        <ul>
+        { featureComponents }
+        </ul>
       </div>
     );
   }
