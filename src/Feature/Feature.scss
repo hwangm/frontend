@@ -18,7 +18,9 @@
     list-style-type: none;
     @extend %li-dimensions;
     margin: 5px 5px;
-    border: 1px solid black;
+    border: 1px solid rgb(102, 99, 99);
+    box-shadow: 2px 2px rgba(116, 113, 113, 0.445);
+    border-radius: 5px;
 }
 
 
@@ -29,6 +31,10 @@
         background-color: #40d9ac;
         transition: background-color 0.1s linear;
         cursor: pointer;
+        .show-subfeatures-text {
+            display:inline;
+            transition: display 0.2s linear;
+        }
     }
 }
 .no-subfeatures {
@@ -36,7 +42,23 @@
     @extend %d-flex;
 }
 
+.show-subfeatures-text {
+    opacity: 0.5;
+    font-size: 12px;
+    display: none;
+}
+
+
+
 .icon-right {
     font-size: 24px;
     margin-right: 10px;
+}
+
+.green {
+    color: #06ba63;
+}
+
+.red {
+    color: #f33939;
 }

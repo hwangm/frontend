@@ -1,43 +1,18 @@
-.App {
-  
+.Feature-header {
+  margin-left: 10px;
 }
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 
 .Feature-container {
-  margin-left: 200px;
-  margin-right: 200px;
+  margin-left: 50px;
+  margin-right: 50px;
   & ul{
     font-size: 24px;
     list-style-type: none;
     float: left;
-    // margin: 5px;
-    // height: 20px;
+
     & li{
-      clear: both;
+      clear: left;
       height: 20px;
-      & ul {
-        // margin-top: 30px;
-      }
     }
   }
 }

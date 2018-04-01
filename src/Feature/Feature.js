@@ -4,10 +4,6 @@ import './Feature.css';
 class Feature extends Component {
   constructor(props) {
     super(props);
-    // props:
-    // title
-    // presence
-    // subfeatures
     this.state = {
       showSubfeatures: false
     };
@@ -21,8 +17,8 @@ class Feature extends Component {
   }
   
   render() {
-    let featurePresentIcon = <i className="icon-right fa fa-check"></i> ;
-    let featureNotPresentIcon = <i className="icon-right fa fa-times"></i>;
+    let featurePresentIcon = <i className="icon-right green fa fa-check"></i> ;
+    let featureNotPresentIcon = <i className="icon-right red fa fa-times"></i>;
 
     if(this.props.subfeatures.length > 0){
       let subfeatures = this.props.subfeatures;
@@ -37,7 +33,11 @@ class Feature extends Component {
       
       return (
         <li className="Feature">
-          <div className="has-subfeatures" onClick={() => this.onClick()}><span>{this.props.title}</span> {this.props.presence ? featurePresentIcon : featureNotPresentIcon }</div>
+          <div className="has-subfeatures" onClick={() => this.onClick()}>
+            <span>{this.props.title}</span>
+            <span className="show-subfeatures-text">Show/hide subfeatures</span>
+            {this.props.presence ? featurePresentIcon : featureNotPresentIcon }
+          </div>
           { this.state.showSubfeatures ? <ul>{ subfeatureComponents }</ul> : null }
         </li>
       )
