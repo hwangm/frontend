@@ -30,4 +30,10 @@
 .Feature-container ul {
   font-size: 24px;
   list-style-type: none;
+  float: left;
+}
+
+.Feature-container ul li {
+  clear: both;
+  height: 20px;
 }

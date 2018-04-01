@@ -14,39 +14,38 @@ class Feature extends Component {
   }
 
   onClick() {
-    if(this.state.showSubfeatures){
-
-    }
-    this.setState({
-      showSubfeatures: !this.state.showSubfeatures
-    });
+    this.setState((prevState) => ({
+      showSubfeatures: !prevState.showSubfeatures
+    }));
 
   }
+  
   render() {
+    let featurePresentIcon = <i className="icon-right fa fa-check"></i> ;
+    let featureNotPresentIcon = <i className="icon-right fa fa-times"></i>;
+
     if(this.props.subfeatures.length > 0){
       let subfeatures = this.props.subfeatures;
-      console.log(this.props.subfeatures);
+
       let subfeatureComponents = subfeatures.map((feature, index) => {
         return (
           <Feature key={index} title={feature.title} presence={feature.presence} subfeatures={feature.subfeatures} />
         )
       });
 
+      
+      
       return (
-        <li class="Feature">
-          <button type="button">{this.props.title} - {this.props.presence ? 'Present' : 'Not Present'}</button>
-          <ul>
-            { this.state.showSubfeatures ? subfeatureComponents : null}
-          </ul>
+        <li className="Feature">
+          <div className="has-subfeatures" onClick={() => this.onClick()}><span>{this.props.title}</span> {this.props.presence ? featurePresentIcon : featureNotPresentIcon }</div>
+          { this.state.showSubfeatures ? <ul>{ subfeatureComponents }</ul> : null }
         </li>
       )
     }
     else{
       return (
-        <li class="Feature">
-          <button type="button">
-            {this.props.title} - {this.props.presence ? 'Present' : 'Not Present'}
-          </button>
+        <li className="Feature">
+          <div className="no-subfeatures"><span>{this.props.title}</span> {this.props.presence ? featurePresentIcon : featureNotPresentIcon }</div>
         </li>
       )
     }

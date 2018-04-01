@@ -1,7 +1,42 @@
+%li-dimensions {
+    width: 300px;
+    min-height: 50px;
+}
+
+%d-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    // margin: 0 10px 0 10px;
+    span {
+        margin-left: 10px;
+    }
+}
 .Feature {
     font-size: 16px;
     list-style-type: none;
-    width: 500px;
-    height: 50px;
+    @extend %li-dimensions;
+    margin: 5px 5px;
     border: 1px solid black;
+}
+
+
+.has-subfeatures {
+    @extend %li-dimensions;
+    @extend %d-flex;
+    &:hover {
+        background-color: #40d9ac;
+        transition: background-color 0.1s linear;
+        cursor: pointer;
+    }
+}
+.no-subfeatures {
+    @extend %li-dimensions;
+    @extend %d-flex;
+}
+
+.icon-right {
+    font-size: 24px;
+    margin-right: 10px;
 }
