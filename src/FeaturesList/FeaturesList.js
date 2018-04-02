@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
+import './FeaturesList.css';
 import Feature from '../Feature/Feature';
 
-class App extends Component {
+class FeaturesList extends Component {
   render() {
     let featureList = window.FEATURES;
     if(!featureList){
@@ -38,4 +38,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default FeaturesList;
