@@ -7,7 +7,7 @@ class App extends Component {
     let featureList = window.FEATURES;
     if(!featureList){
       return (
-        <div className="App">
+        <div>
           <div className="Feature-header">
             <h2>Camp Features</h2>
           </div>
@@ -24,7 +24,7 @@ class App extends Component {
     });
 
     return (
-      <div className="App">
+      <div>
         <div className="Feature-header">
           <h2>Camp Features</h2>
         </div>
